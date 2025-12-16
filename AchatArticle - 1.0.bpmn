@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bonitaConnector="http://www.bonitasoft.org/studio/connector/definition/6.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di_1="http://www.omg.org/spec/DD/20100524/DI" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:model="http://www.omg.org/spec/BPMN/20100524/MODEL" xsi:schemaLocation="schemaLocation http://www.omg.org/spec/BPMN/20100524/MODEL schemas/BPMN20.xsd" exporter="BonitaSoft" exporterVersion="10.2.0" expressionLanguage="http://groovy.apache.org/" targetNamespace="http://bonitasoft.com/_encJkNq2EfCrBp6F_MKvNg">
+  <model:collaboration id="_encJkNq2EfCrBp6F_MKvNg">
+    <model:participant id="_mXht0NrOEfCS8KwTKhtpew" name="AchatArticle" processRef="_encJkdq2EfCrBp6F_MKvNg"/>
+    <model:participant id="_encJq9q2EfCrBp6F_MKvNg" name="Employee actor">
+      <model:documentation><![CDATA[This is an example of actor that is mapped to any ACME users]]></model:documentation>
+    </model:participant>
+  </model:collaboration>
+  <model:process id="_encJkdq2EfCrBp6F_MKvNg" name="AchatArticle">
+    <model:ioSpecification id="_mXiU4drOEfCS8KwTKhtpew">
+      <model:dataInput id="_mXiU4trOEfCS8KwTKhtpew" itemSubjectRef="_45wfcNq5EfCrBp6F_MKvNg"/>
+      <model:inputSet id="_mXiU49rOEfCS8KwTKhtpew">
+        <model:dataInputRefs>_mXiU4trOEfCS8KwTKhtpew</model:dataInputRefs>
+      </model:inputSet>
+      <model:outputSet id="_mXiU59rOEfCS8KwTKhtpew"/>
+    </model:ioSpecification>
+    <model:laneSet id="achatarticle_laneSet">
+      <model:lane id="_encJktq2EfCrBp6F_MKvNg" name="Employee lane">
+        <model:flowNodeRef>_encJk9q2EfCrBp6F_MKvNg</model:flowNodeRef>
+        <model:flowNodeRef>_encJl9q2EfCrBp6F_MKvNg</model:flowNodeRef>
+        <model:flowNodeRef>_UwYS8Nq4EfCrBp6F_MKvNg</model:flowNodeRef>
+        <model:flowNodeRef>_q1tLUNq4EfCrBp6F_MKvNg</model:flowNodeRef>
+        <model:flowNodeRef>_rwxscNq4EfCrBp6F_MKvNg</model:flowNodeRef>
+        <model:flowNodeRef>_Vx6PINq9EfCrBp6F_MKvNg</model:flowNodeRef>
+        <model:flowNodeRef>_t9r2oNq9EfCrBp6F_MKvNg</model:flowNodeRef>
+        <model:flowNodeRef>_k1EvgNrBEfCrBp6F_MKvNg</model:flowNodeRef>
+        <model:flowNodeRef>_DnapENrHEfCS8KwTKhtpew</model:flowNodeRef>
+      </model:lane>
+    </model:laneSet>
+    <model:dataObject id="DataObject_mXiU4NrOEfCS8KwTKhtpew_45wfcNq5EfCrBp6F_MKvNg" name="paymentMethod$" isCollection="false" itemSubjectRef="_45wfcNq5EfCrBp6F_MKvNg"/>
+    <model:startEvent id="_encJk9q2EfCrBp6F_MKvNg" name="Début achat"/>
+    <model:userTask id="_encJl9q2EfCrBp6F_MKvNg" name="Choisir mode de paiement">
+      <model:ioSpecification id="_mXi79NrOEfCS8KwTKhtpew">
+        <model:dataInput id="_mXi79drOEfCS8KwTKhtpew" itemSubjectRef="_RszeINrBEfCrBp6F_MKvNg"/>
+        <model:dataInput id="_mXi7-NrOEfCS8KwTKhtpew" itemSubjectRef="_IDeA0NrLEfCS8KwTKhtpew"/>
+        <model:inputSet id="_mXi79trOEfCS8KwTKhtpew">
+          <model:dataInputRefs>_mXi79drOEfCS8KwTKhtpew</model:dataInputRefs>
+        </model:inputSet>
+        <model:inputSet id="_mXi7-drOEfCS8KwTKhtpew">
+          <model:dataInputRefs>_mXi7-NrOEfCS8KwTKhtpew</model:dataInputRefs>
+        </model:inputSet>
+      </model:ioSpecification>
+      <model:performer id="_mXi78trOEfCS8KwTKhtpew">
+        <model:resourceRef>_encJq9q2EfCrBp6F_MKvNg</model:resourceRef>
+      </model:performer>
+    </model:userTask>
+    <model:dataObject id="DataObject_mXi789rOEfCS8KwTKhtpew_RszeINrBEfCrBp6F_MKvNg" name="paymentMethod" isCollection="false" itemSubjectRef="_RszeINrBEfCrBp6F_MKvNg"/>
+    <model:dataObject id="DataObject_mXi799rOEfCS8KwTKhtpew_IDeA0NrLEfCS8KwTKhtpew" name="chosenPayment" isCollection="false" itemSubjectRef="_IDeA0NrLEfCS8KwTKhtpew"/>
+    <model:exclusiveGateway id="_UwYS8Nq4EfCrBp6F_MKvNg" name="Choix Paiement" default="_cPa3YNq4EfCrBp6F_MKvNg"/>
+    <model:userTask id="_q1tLUNq4EfCrBp6F_MKvNg" name="Vérifier CIN"/>
+    <model:userTask id="_rwxscNq4EfCrBp6F_MKvNg" name="Rendre monnaie" default="_W_dAUNq9EfCrBp6F_MKvNg"/>
+    <model:exclusiveGateway id="_Vx6PINq9EfCrBp6F_MKvNg" name="Merge Paiement"/>
+    <model:endEvent id="_t9r2oNq9EfCrBp6F_MKvNg" name="Fin processus"/>
+    <model:userTask id="_k1EvgNrBEfCrBp6F_MKvNg" name="Remettre l'article"/>
+    <model:callActivity id="_DnapENrHEfCS8KwTKhtpew" name="Paiement par CB" calledElement="_iE1qQdrGEfCS8KwTKhtpew">
+      <model:dataInputAssociation id="_mZI3YNrOEfCS8KwTKhtpew"/>
+      <model:dataOutputAssociation id="_mZI3YdrOEfCS8KwTKhtpew"/>
+    </model:callActivity>
+    <model:sequenceFlow id="_encJqNq2EfCrBp6F_MKvNg" name="" sourceRef="_encJk9q2EfCrBp6F_MKvNg" targetRef="_encJl9q2EfCrBp6F_MKvNg"/>
+    <model:sequenceFlow id="_8dG8UNq3EfCrBp6F_MKvNg" name="" sourceRef="_encJl9q2EfCrBp6F_MKvNg" targetRef="_UwYS8Nq4EfCrBp6F_MKvNg"/>
+    <model:sequenceFlow id="_bkcnwNq4EfCrBp6F_MKvNg" name="" sourceRef="_UwYS8Nq4EfCrBp6F_MKvNg" targetRef="_q1tLUNq4EfCrBp6F_MKvNg">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_mZJecNrOEfCS8KwTKhtpew" evaluatesToTypeRef="java:java.lang.Boolean"><![CDATA[paymentMethod$=="cheque"]]></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_cPa3YNq4EfCrBp6F_MKvNg" name="" sourceRef="_UwYS8Nq4EfCrBp6F_MKvNg" targetRef="_rwxscNq4EfCrBp6F_MKvNg"/>
+    <model:sequenceFlow id="_W_dAUNq9EfCrBp6F_MKvNg" name="" sourceRef="_rwxscNq4EfCrBp6F_MKvNg" targetRef="_Vx6PINq9EfCrBp6F_MKvNg"/>
+    <model:sequenceFlow id="_XfZrsNq9EfCrBp6F_MKvNg" name="" sourceRef="_q1tLUNq4EfCrBp6F_MKvNg" targetRef="_Vx6PINq9EfCrBp6F_MKvNg"/>
+    <model:sequenceFlow id="_mqFGINq9EfCrBp6F_MKvNg" name="" sourceRef="_Vx6PINq9EfCrBp6F_MKvNg" targetRef="_k1EvgNrBEfCrBp6F_MKvNg"/>
+    <model:sequenceFlow id="_t9tEwtq9EfCrBp6F_MKvNg" name="" sourceRef="_k1EvgNrBEfCrBp6F_MKvNg" targetRef="_t9r2oNq9EfCrBp6F_MKvNg"/>
+    <model:sequenceFlow id="_QQoMUNrHEfCS8KwTKhtpew" name="" sourceRef="_UwYS8Nq4EfCrBp6F_MKvNg" targetRef="_DnapENrHEfCS8KwTKhtpew">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_mZKskNrOEfCS8KwTKhtpew" evaluatesToTypeRef="java:java.lang.Boolean"><![CDATA[paymentMethod$ == "CB"]]></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_ReBzkNrHEfCS8KwTKhtpew" name="" sourceRef="_DnapENrHEfCS8KwTKhtpew" targetRef="_Vx6PINq9EfCrBp6F_MKvNg"/>
+    <model:association id="_mZLToNrOEfCS8KwTKhtpew" sourceRef="_mZKskdrOEfCS8KwTKhtpew" targetRef="_encJl9q2EfCrBp6F_MKvNg"/>
+    <model:association id="_mZL6sNrOEfCS8KwTKhtpew" sourceRef="_mZLTotrOEfCS8KwTKhtpew" targetRef="_q1tLUNq4EfCrBp6F_MKvNg"/>
+    <model:association id="_mZL6strOEfCS8KwTKhtpew" sourceRef="_mZL6sdrOEfCS8KwTKhtpew" targetRef="_rwxscNq4EfCrBp6F_MKvNg"/>
+    <model:textAnnotation id="_mZKskdrOEfCS8KwTKhtpew">
+      <model:text><![CDATA[L'utilisateur choisit entre trois modes de paiement:
+- Carte Bancaire (CB)
+- Chèque
+- Espèces
+Le processus continue selon le choix.]]></model:text>
+    </model:textAnnotation>
+    <model:textAnnotation id="_mZLTodrOEfCS8KwTKhtpew">
+      <model:text><![CDATA[Saisie du code PIN à 4 chiffres.
+]]></model:text>
+    </model:textAnnotation>
+    <model:textAnnotation id="_mZLTotrOEfCS8KwTKhtpew">
+      <model:text><![CDATA[Pour paiement par chèque, vérification obligatoire
+de la Carte d'Identité Nationale (CIN) du client.]]></model:text>
+    </model:textAnnotation>
+    <model:textAnnotation id="_mZL6sdrOEfCS8KwTKhtpew">
+      <model:text><![CDATA[Calcul automatique de la monnaie à rendre.]]></model:text>
+    </model:textAnnotation>
+  </model:process>
+  <model:itemDefinition id="_45wfcNq5EfCrBp6F_MKvNg" structureRef="java:java.lang.String"/>
+  <model:itemDefinition id="_RszeINrBEfCrBp6F_MKvNg" structureRef="java:java.lang.String"/>
+  <model:itemDefinition id="_IDeA0NrLEfCS8KwTKhtpew" structureRef="java:java.lang.String"/>
+  <di:BPMNDiagram name="AchatArticle">
+    <di:BPMNPlane id="plane__encJkNq2EfCrBp6F_MKvNg" bpmnElement="_encJkNq2EfCrBp6F_MKvNg">
+      <di:BPMNShape id="_encwodq2EfCrBp6F_MKvNg" bpmnElement="_mXht0NrOEfCS8KwTKhtpew" isHorizontal="true">
+        <dc:Bounds height="367.0" width="1080.0" x="0.0" y="0.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_encwpNq2EfCrBp6F_MKvNg" bpmnElement="_encJktq2EfCrBp6F_MKvNg" isHorizontal="true">
+        <dc:Bounds height="367.0" width="1050.0" x="30.0" y="0.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_encwqtq2EfCrBp6F_MKvNg" bpmnElement="_encJk9q2EfCrBp6F_MKvNg">
+        <dc:Bounds height="30.0" width="30.0" x="90.0" y="134.0"/>
+        <di:BPMNLabel id="_mXi78drOEfCS8KwTKhtpew" labelStyle="_mXi78NrOEfCS8KwTKhtpew">
+          <dc:Bounds height="17.0" width="81.0" x="65.0" y="169.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_encwp9q2EfCrBp6F_MKvNg" bpmnElement="_encJl9q2EfCrBp6F_MKvNg">
+        <dc:Bounds height="60.0" width="120.0" x="190.0" y="119.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_UwY6A9q4EfCrBp6F_MKvNg" bpmnElement="_UwYS8Nq4EfCrBp6F_MKvNg">
+        <dc:Bounds height="43.0" width="43.0" x="401.0" y="127.0"/>
+        <di:BPMNLabel id="_mXjjANrOEfCS8KwTKhtpew" labelStyle="_mXi78NrOEfCS8KwTKhtpew">
+          <dc:Bounds height="17.0" width="103.0" x="371.0" y="175.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_q1tyZNq4EfCrBp6F_MKvNg" bpmnElement="_q1tLUNq4EfCrBp6F_MKvNg">
+        <dc:Bounds height="50.0" width="100.0" x="536.0" y="124.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_rwy6kNq4EfCrBp6F_MKvNg" bpmnElement="_rwxscNq4EfCrBp6F_MKvNg">
+        <dc:Bounds height="50.0" width="100.0" x="536.0" y="208.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Vx7dQNq9EfCrBp6F_MKvNg" bpmnElement="_Vx6PINq9EfCrBp6F_MKvNg">
+        <dc:Bounds height="43.0" width="43.0" x="723.0" y="127.0"/>
+        <di:BPMNLabel id="_mXjjA9rOEfCS8KwTKhtpew" labelStyle="_mXi78NrOEfCS8KwTKhtpew">
+          <dc:Bounds height="17.0" width="103.0" x="693.0" y="175.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_t9sds9q9EfCrBp6F_MKvNg" bpmnElement="_t9r2oNq9EfCrBp6F_MKvNg">
+        <dc:Bounds height="30.0" width="30.0" x="1000.0" y="134.0"/>
+        <di:BPMNLabel id="_mXjjBNrOEfCS8KwTKhtpew" labelStyle="_mXi78NrOEfCS8KwTKhtpew">
+          <dc:Bounds height="17.0" width="96.0" x="967.0" y="169.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_k1F9oNrBEfCrBp6F_MKvNg" bpmnElement="_k1EvgNrBEfCrBp6F_MKvNg">
+        <dc:Bounds height="50.0" width="100.0" x="835.0" y="124.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_DnceQNrHEfCS8KwTKhtpew" bpmnElement="_DnapENrHEfCS8KwTKhtpew">
+        <dc:Bounds height="50.0" width="100.0" x="532.0" y="48.0"/>
+      </di:BPMNShape>
+      <di:BPMNEdge id="_encwudq2EfCrBp6F_MKvNg" bpmnElement="_encJqNq2EfCrBp6F_MKvNg">
+        <di_1:waypoint x="120.0" y="149.0"/>
+        <di_1:waypoint x="190.0" y="149.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_8dIKcNq3EfCrBp6F_MKvNg" bpmnElement="_8dG8UNq3EfCrBp6F_MKvNg">
+        <di_1:waypoint x="310.0" y="148.0"/>
+        <di_1:waypoint x="401.0" y="148.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_bkcnw9q4EfCrBp6F_MKvNg" bpmnElement="_bkcnwNq4EfCrBp6F_MKvNg">
+        <di_1:waypoint x="444.0" y="148.0"/>
+        <di_1:waypoint x="536.0" y="148.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_cPbecNq4EfCrBp6F_MKvNg" bpmnElement="_cPa3YNq4EfCrBp6F_MKvNg">
+        <di_1:waypoint x="436.0" y="155.0"/>
+        <di_1:waypoint x="436.0" y="190.0"/>
+        <di_1:waypoint x="538.0" y="190.0"/>
+        <di_1:waypoint x="538.0" y="208.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_W_eOcNq9EfCrBp6F_MKvNg" bpmnElement="_W_dAUNq9EfCrBp6F_MKvNg">
+        <di_1:waypoint x="636.0" y="237.0"/>
+        <di_1:waypoint x="733.0" y="237.0"/>
+        <di_1:waypoint x="733.0" y="158.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Xfa50Nq9EfCrBp6F_MKvNg" bpmnElement="_XfZrsNq9EfCrBp6F_MKvNg">
+        <di_1:waypoint x="636.0" y="149.0"/>
+        <di_1:waypoint x="723.0" y="149.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_mqFGI9q9EfCrBp6F_MKvNg" bpmnElement="_mqFGINq9EfCrBp6F_MKvNg">
+        <di_1:waypoint x="766.0" y="148.0"/>
+        <di_1:waypoint x="835.0" y="148.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_t9tr0dq9EfCrBp6F_MKvNg" bpmnElement="_t9tEwtq9EfCrBp6F_MKvNg">
+        <di_1:waypoint x="935.0" y="149.0"/>
+        <di_1:waypoint x="1000.0" y="149.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_QQu6ANrHEfCS8KwTKhtpew" bpmnElement="_QQoMUNrHEfCS8KwTKhtpew">
+        <di_1:waypoint x="429.0" y="134.0"/>
+        <di_1:waypoint x="499.0" y="134.0"/>
+        <di_1:waypoint x="499.0" y="72.0"/>
+        <di_1:waypoint x="532.0" y="72.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_ReCaoNrHEfCS8KwTKhtpew" bpmnElement="_ReBzkNrHEfCS8KwTKhtpew">
+        <di_1:waypoint x="632.0" y="75.0"/>
+        <di_1:waypoint x="731.0" y="75.0"/>
+        <di_1:waypoint x="731.0" y="140.0"/>
+      </di:BPMNEdge>
+      <di:BPMNShape id="_n5x-ANq-EfCrBp6F_MKvNg" bpmnElement="_mZKskdrOEfCS8KwTKhtpew">
+        <dc:Bounds height="87.0" width="178.0" x="161.0" y="11.0"/>
+      </di:BPMNShape>
+      <di:BPMNEdge id="_n54EoNq-EfCrBp6F_MKvNg" bpmnElement="_mZLToNrOEfCS8KwTKhtpew">
+        <di_1:waypoint x="250.0" y="98.0"/>
+        <di_1:waypoint x="250.0" y="119.0"/>
+      </di:BPMNEdge>
+      <di:BPMNShape id="_9bsAQNq-EfCrBp6F_MKvNg" bpmnElement="_mZLTodrOEfCS8KwTKhtpew">
+        <dc:Bounds height="43.0" width="127.0" x="695.0" y="26.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_GDRhIdq_EfCrBp6F_MKvNg" bpmnElement="_mZLTotrOEfCS8KwTKhtpew">
+        <dc:Bounds height="50.0" width="251.0" x="205.0" y="194.0"/>
+      </di:BPMNShape>
+      <di:BPMNEdge id="_GDSIMdq_EfCrBp6F_MKvNg" bpmnElement="_mZL6sNrOEfCS8KwTKhtpew">
+        <di_1:waypoint x="422.0" y="194.0"/>
+        <di_1:waypoint x="536.0" y="163.0"/>
+      </di:BPMNEdge>
+      <di:BPMNShape id="_LpaqQNq_EfCrBp6F_MKvNg" bpmnElement="_mZL6sdrOEfCS8KwTKhtpew">
+        <dc:Bounds height="50.0" width="100.0" x="532.0" y="294.0"/>
+      </di:BPMNShape>
+      <di:BPMNEdge id="_LpbRUNq_EfCrBp6F_MKvNg" bpmnElement="_mZL6strOEfCS8KwTKhtpew">
+        <di_1:waypoint x="586.0" y="294.0"/>
+        <di_1:waypoint x="586.0" y="258.0"/>
+      </di:BPMNEdge>
+    </di:BPMNPlane>
+    <di:BPMNLabelStyle id="_mXi78NrOEfCS8KwTKhtpew">
+      <dc:Font isBold="false" isItalic="false" isStrikeThrough="false" isUnderline="false" name=".AppleSystemUIFont" size="9.0"/>
+    </di:BPMNLabelStyle>
+  </di:BPMNDiagram>
+</model:definitions>
